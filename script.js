@@ -7,6 +7,7 @@ ToggleBtnId.addEventListener("click", () => {
   navId.classList.add("show");
 });
 
+
 // ==== HIDE MENU ==== //
 CloseBtnId.addEventListener("click", () => {
   navId.classList.remove("show");
@@ -61,8 +62,36 @@ gsap.from(".btn_wrapper", {
 });
 // ==== TEAM IMAGE ==== //
 gsap.from(".team_img_wrapper img", {
-  opacity: 0,
+  opacity: 40,
   y: 20,
   delay: 3,
   duration: 1,
 });
+
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+
+let currentIndex = 0;
+let slideInterval;
+
+function startSlider(){
+  slideInterval=setInterval(nextSlide,3000);
+}
+
+function nextSlide() {
+  currentIndex++;
+  if (currentIndex === slides.length) {
+    currentIndex = 0;
+  }
+
+  updateSlider();
+}
+
+
+function updateSlider() {
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+setInterval(nextSlide, 10000); // Change slide every 5 seconds
+
+

@@ -12,18 +12,41 @@
 *::after {
   box-sizing: border-box;
 }
+.image_wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 0 0 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
+  
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
 
 /* ==== CSS VARIABLES ==== */
 :root {
-  --primary-color: #5cc719;
+  --primary-color: #bd4d0c;
   --link-color: #041331;
   --btn-hover-color: #2b50c7;
   --lg-heading: #8f0a43;
   --text-content: #514204;
   --fixed-header-height: 4.5rem;
   --font-size-body-text: clamp(14px, 1.6vw, 16px);
-  --h1-font-size: calc(var(--font-size-body-text) * 2.4);
-  --h2-font-size: calc(var(--h1-font-size) - 15px);
+  --h1-font-size: calc(var(--font-size-body-text) * 3.4);
+  --h2-font-size: calc(var(--h1-font-size) - 20px);
   --h3-font-size: calc(var(var(--h2-font-size)) - 8px);
 }
 
@@ -72,7 +95,7 @@ button {
 }
 /* ==== LOGO ==== */
 .logo h2 {
-  font-size: var(--h2-font-size);
+  font-size: var(--h1-font-size);
   color: var(--primary-color);
 }
 /* ====  NAV-MENU  ==== */
@@ -84,8 +107,8 @@ button {
   margin: 0 2rem;
 }
 .nav_menu_item .nav_menu_link {
-  font-size: 16.5px;
-  line-height: 27px;
+  font-size: 20px;
+  line-height: 32;
   color: var(--link-color);
   text-transform: capitalize;
   letter-spacing: 0.5px;
